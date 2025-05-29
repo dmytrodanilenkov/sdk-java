@@ -121,7 +121,7 @@ if (project.hasProperty("nativeBuild")) {
                 // everything dynamically (note the '-' rather than '+' in front of
                 // StaticExecutable)
                 if (isLinux() && !project.hasProperty("nativeBuildMusl")) {
-                    buildArgs.add("-H:+StaticExecutableWithDynamicLibC")
+                    buildArgs.add("--static-nolibc")
                 } else if (isLinux() && project.hasProperty("nativeBuildMusl")) {
                     buildArgs.add("--static")
                     buildArgs.add("--libc=musl")
